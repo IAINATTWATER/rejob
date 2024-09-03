@@ -28,13 +28,15 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          'min-h-screen flex flex-col bg-background font-sans antialiased overflow-hidden',
+          'min-h-screen flex flex-col bg-background font-sans antialiased',
           fontSans.variable
         )}
       >
-        <NavBar /> {/* Render NavBar here */}
-        <main className="flex-grow">{children}</main> {/* Main content area */}
-        <Footer /> {/* Render Footer here */}
+        <NavBar />
+        <div className="flex flex-col min-h-screen">
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

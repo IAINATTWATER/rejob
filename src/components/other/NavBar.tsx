@@ -52,8 +52,9 @@ const NavBar = () => {
             Pricing
           </Link>
         </>
+        {/* Changed "Sign in" to "Log In" and made it a Link */}
         <Link href="/auth/login" className="bg-[#ff3e4c] hover:bg-[#ff5766] text-white font-bold py-2 px-4 rounded-full">
-          Sign in
+          Log In
         </Link>
       </div>
     </nav>
