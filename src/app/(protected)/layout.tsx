@@ -1,7 +1,12 @@
 import { auth } from "@/auth";
 import { SessionProvider } from "next-auth/react";
-import { Navbar } from "./settings/navbar";
 import { Toaster } from "sonner";
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '600'], // Add any other weights you need
+});
 
 export default async function ProtectedLayout({ 
   children 
@@ -11,11 +16,10 @@ export default async function ProtectedLayout({
   const session = await auth()
   return (
     <SessionProvider session={session}>
-      <div className="h-full from-sky-400 to-blue-800 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] overflow-y-auto">
+      <div className={`h-full bg-white overflow-y-auto ${poppins.className}`}>
         <div className="flex flex-col py-4 gap-10 items-center justify-center">
-          <Navbar />
           {children}
-          <Toaster  richColors closeButton />
+          <Toaster richColors closeButton />
         </div>
       </div>
     </SessionProvider>
