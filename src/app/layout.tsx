@@ -4,7 +4,6 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import NavBar from '@/components/other/NavBar'; // Import NavBar
 import Footer from '@/components/other/Footer'; // Import Footer
-import { SessionProvider } from "@/providers/SessionProvider";
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -33,13 +32,11 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <SessionProvider>
-          <NavBar />
-          <div className="flex flex-col min-h-screen">
-            <main className="flex-grow">{children}</main>
-            <Footer />
-          </div>
-        </SessionProvider>
+        <NavBar />
+        <div className="flex flex-col min-h-screen">
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

@@ -6,7 +6,6 @@
 export const publicRoutes = [
   '/',
   '/auth/new-verification',
-  '/pricing'  // Add this line
 ]
 
 /**
