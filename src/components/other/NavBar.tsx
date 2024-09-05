@@ -4,16 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { logout } from "@/actions/logout";
 
-
 const NavBar = () => {
-
-
-
   const handleLogout = async () => {
     await logout();
   };
-
-
 
   return (
     <nav className="flex flex-wrap justify-between items-center px-4 py-2 bg-white">
@@ -29,7 +23,7 @@ const NavBar = () => {
       </div>
       
       <div className="hidden md:flex space-x-4">
-        {["Home", "Pricing", "Learn", "FAQ", "Contact"].map((item) => (
+        {["Home", "Learn", "FAQ", "Contact"].map((item) => (
           <span 
             key={item} 
             className="font-bold text-[#ff3e4c] hover:underline"
@@ -38,6 +32,9 @@ const NavBar = () => {
             {item}
           </span>
         ))}
+        <Link href="/pricing" className="font-bold text-[#ff3e4c] hover:underline">
+          Pricing
+        </Link>
       </div>
       
       <div className="flex items-center space-x-4">
@@ -48,11 +45,10 @@ const NavBar = () => {
           >
             Logout
           </button>
-          <Link href="/rejob/pricing" className="bg-[#ff3e4c] hover:bg-[#ff5766] text-white font-bold py-2 px-4 rounded-full">
+          <Link href="/pricing" className="bg-[#ff3e4c] hover:bg-[#ff5766] text-white font-bold py-2 px-4 rounded-full">
             Pricing
           </Link>
         </>
-        {/* Changed "Sign in" to "Log In" and made it a Link */}
         <Link href="/auth/login" className="bg-[#ff3e4c] hover:bg-[#ff5766] text-white font-bold py-2 px-4 rounded-full">
           Log In
         </Link>

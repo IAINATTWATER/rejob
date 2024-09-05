@@ -30,8 +30,10 @@ export default auth((req) => {
   }
   
   if (!isLoggedIn && !isPublicRoute) {
+    console.log('isPublicRoute', isPublicRoute)
     let callbackUrl = nextUrl.pathname
     if (nextUrl.search) {
+      console.log('nextUrl.search', nextUrl.search)
       callbackUrl += nextUrl.search
     }
 
